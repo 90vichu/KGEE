@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KGEE 2026 Website - Design System</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 32px; background:#f7f9f7; color:#16261a; }
+    main { max-width: 960px; margin: auto; background:#ffffff; padding: 32px; border-radius: 18px; box-shadow: 0 18px 50px -22px rgba(18,51,107,0.28); }
+    h1,h2,h3 { color:#12336b; margin-top: 1.6em; }
+    h1 { font-size: 2.4rem; margin-bottom:0.6em; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.2rem; }
+    pre { background:#eef4ef; border:1px solid #e4ebe4; padding:16px; border-radius:12px; overflow-x:auto; }
+    code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }
+    ul { padding-left: 1.2rem; }
+    li { margin-bottom: 0.4rem; }
+    .section { margin-bottom: 2rem; }
+    .note { background:#fcf6e8; border:1px solid #f5e2b7; padding:16px; border-radius:12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>KGEE 2026 Website - Design System &amp; Developer Guide</h1>
+
+    <section class="section">
+      <h2>Color Palette</h2>
+      <h3>Primary Colors</h3>
+      <pre><code>--navy: #12336B;              /* Primary corporate blue from KGEE logo "2026" */
+--navy-dark: #0C2450;         /* Darker navy for backgrounds and footer */</code></pre>
+
+      <h3>Accent Colors</h3>
+      <pre><code>--leaf: #4CAF2E;              /* Bright green for highlights (limited use) */
+--leaf-soft: #6DBE46;         /* Softer green for secondary accents */
+--gold: #F5A623;              /* Golden sun color for special highlights */
+--gold-deep: #E08A0B;         /* Deeper gold for hover states */</code></pre>
+
+      <h3>Neutral Colors</h3>
+      <pre><code>--ink: #16261A;               /* Deep text color */
+--slate: #5A6B60;             /* Medium gray for body text */
+--line: #E4EBE4;              /* Light dividers and borders */
+--mist: #F4F8F3;              /* Very light background wash */
+--white: #FFFFFF;             /* Pure white */</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Typography</h2>
+      <h3>Font Families</h3>
+      <pre><code>--f-display: 'Sora', sans-serif;    /* Headers, titles, bold text */
+--f-body: 'Manrope', sans-serif;    /* Body copy, UI elements */</code></pre>
+
+      <h3>Font Usage</h3>
+      <p><strong>Display (Sora)</strong></p>
+      <ul>
+        <li>H1: 2.4rem - 4rem (responsive)</li>
+        <li>H2: 1.9rem - 2.9rem (responsive)</li>
+        <li>H3: 1.1rem - 1.2rem</li>
+        <li>H4: 1rem</li>
+        <li>Subheadings: 1.05rem - 1.4rem</li>
+        <li>All at weight 700-800</li>
+      </ul>
+      <p><strong>Body (Manrope)</strong></p>
+      <ul>
+        <li>Body text: 0.95rem - 1.1rem</li>
+        <li>Labels: 0.78rem - 0.9rem</li>
+        <li>Small text: 0.68rem - 0.82rem</li>
+        <li>All at weight 400-600</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Spacing System</h2>
+      <h3>Base Unit</h3>
+      <pre><code>Base: 8px
+Gap sizes: 4px, 8px, 12px, 16px, 20px, 24px, 28px, 32px, 40px, 48px, 56px</code></pre>
+
+      <h3>Section Spacing</h3>
+      <pre><code>Padding: 60px (mobile) / 96px (desktop)
+Margins: 14px, 16px, 22px, 28px, 32px, 48px</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Shadow System</h2>
+      <pre><code>--shadow: 0 18px 50px -22px rgba(18, 51, 107, 0.28);       /* Large */
+--shadow-sm: 0 8px 24px -14px rgba(18, 51, 107, 0.25);     /* Small */</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Border Radius</h2>
+      <pre><code>--r: 14px;        /* Standard rounded corners */
+8px - 12px        /* Small elements */
+14px - 20px       /* Cards and sections */
+100px             /* Pill-shaped buttons */</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Animation Principles</h2>
+      <h3>Duration</h3>
+      <ul>
+        <li>Quick interactions: 0.2s</li>
+        <li>Standard animations: 0.3s - 0.8s</li>
+        <li>Page transitions: 0.35s - 0.8s</li>
+      </ul>
+      <h3>Easing</h3>
+      <pre><code>ease              /* Standard easing */
+ease-in-out       /* Smooth, natural motion */
+cubic-bezier(.4, 0, .2, 1)  /* Material design */</code></pre>
+      <h3>Animation Types</h3>
+      <p><strong>Entrance Animations</strong></p>
+      <ul>
+        <li><code>fadeInUp</code> - 0.8s ease (for reveals on scroll)</li>
+        <li><code>slideInLeft</code> - 0.8s ease (left-side elements)</li>
+        <li><code>slideInRight</code> - 0.8s ease (right-side elements)</li>
+      </ul>
+      <p><strong>Hover Effects</strong></p>
+      <ul>
+        <li><code>translateY(-2px)</code> - Lift on hover</li>
+        <li><code>transform: scale(1.05)</code> - Subtle scale</li>
+        <li><code>transform: scale(1.1)</code> - Larger scale for icons</li>
+      </ul>
+      <p><strong>State Changes</strong></p>
+      <ul>
+        <li><code>max-height</code> - FAQ expand/collapse</li>
+        <li><code>opacity</code> - Fade in/out</li>
+        <li><code>transform: scaleX()</code> - Line animations</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Component Specifications</h2>
+      <h3>Buttons</h3>
+      <p><strong>Primary Button</strong></p>
+      <pre><code>Background: --navy
+Color: white
+Padding: 15px 28px (or 11px 18px for small)
+Border-radius: 12px
+Font-weight: 700
+Box-shadow: 0 12px 26px -12px rgba(18, 51, 107, 0.6)
+Hover: --navy-dark, translateY(-2px)</code></pre>
+      <p><strong>Gold Button</strong></p>
+      <pre><code>Background: --gold
+Color: #1a1200
+Similar structure to primary
+Hover: --gold-deep, translateY(-2px)</code></pre>
+      <p><strong>Outline Button</strong></p>
+      <pre><code>Background: transparent
+Border: 2px solid --navy
+Color: --navy
+Hover: background --navy, color white</code></pre>
+
+      <h3>Cards</h3>
+      <pre><code>Background: white
+Border: 1px solid --line
+Border-radius: 14px
+Padding: 24px - 44px
+Box-shadow: --shadow-sm
+Hover: transform translateY(-4px to -8px), stronger shadow</code></pre>
+
+      <h3>Form Elements</h3>
+      <pre><code>Padding: 12px 14px
+Border: 1px solid --line
+Border-radius: 8px
+Font-size: 0.95rem
+Focus: border-color --leaf, box-shadow with 3px rgba glow</code></pre>
+
+      <h3>Navigation Link</h3>
+      <pre><code>Color: --navy
+Background: --mist
+Underline: animated scaleX transform</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Responsive Breakpoints</h2>
+      <pre><code>Desktop: 1040px and above
+Tablet: 640px - 1040px
+Mobile: Below 640px
+Extra Small: Below 480px</code></pre>
+      <h3>Grid Adjustments</h3>
+      <pre><code>Desktop: Multi-column grids (3-4 columns)
+Tablet: 2-column grids
+Mobile: Single column</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Code Style Guidelines</h2>
+      <h3>HTML</h3>
+      <ul>
+        <li>Use semantic HTML5 elements (header, nav, section, footer)</li>
+        <li>Use aria labels for accessibility</li>
+        <li>Use data attributes for JavaScript hooks</li>
+        <li>Keep indentation consistent (2 spaces)</li>
+      </ul>
+      <h3>CSS</h3>
+      <ul>
+        <li>Use CSS variables for colors, spacing, and typography</li>
+        <li>Use class selectors (avoid ID selectors)</li>
+        <li>Group related properties</li>
+        <li>Use meaningful class names (BEM-inspired)</li>
+        <li>Mobile-first approach in media queries</li>
+      </ul>
+      <h3>JavaScript</h3>
+      <ul>
+        <li>Use vanilla JS (no jQuery)</li>
+        <li>Use const/let (no var)</li>
+        <li>Use arrow functions when appropriate</li>
+        <li>Add comments for complex logic</li>
+        <li>Use semantic variable names</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>File Organization</h2>
+      <pre><code>kgee-website/
+├── HTML files (5 total)
+├── styles.css (single stylesheet)
+├── script.js (single JavaScript file)
+├── assets/
+│   └── Logo files
+├── README.md
+├── DEPLOYMENT.md
+└── DESIGN_SYSTEM.md (this file)</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Performance Targets</h2>
+      <ul>
+        <li>First Contentful Paint: &lt; 1.5s</li>
+        <li>Largest Contentful Paint: &lt; 2.5s</li>
+        <li>Cumulative Layout Shift: &lt; 0.1</li>
+        <li>Page size: &lt; 100KB (excluding images)</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Common Customizations</h2>
+      <h3>Change Primary Color</h3>
+      <ol>
+        <li>Update <code>--navy</code> and <code>--navy-dark</code> in styles.css</li>
+        <li>Test contrast ratios for accessibility</li>
+        <li>Update animated background gradients</li>
+      </ol>
+      <h3>Update Typography</h3>
+      <ol>
+        <li>Import new Google Font in HTML</li>
+        <li>Update CSS font variables</li>
+        <li>Adjust rem sizes if needed</li>
+        <li>Test responsive scaling</li>
+      </ol>
+      <h3>Add New Page</h3>
+      <ol>
+        <li>Copy structure from existing page</li>
+        <li>Add to navigation links (all 5 pages)</li>
+        <li>Update mobile menu</li>
+        <li>Add active state logic in script.js</li>
+        <li>Test all links</li>
+      </ol>
+      <h3>Modify Animation</h3>
+      <ol>
+        <li>Edit animation duration in CSS</li>
+        <li>Update animation-delay values for stagger</li>
+        <li>Test prefers-reduced-motion respects</li>
+        <li>Verify smooth performance</li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
